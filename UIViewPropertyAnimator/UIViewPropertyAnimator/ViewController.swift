@@ -36,11 +36,13 @@ class ViewController: UIViewController {
             self.image.alpha = 1
             self.image.transform = CGAffineTransform(scaleX: 2, y: 2)
         }
-        
         //Add the move down animation and set it to start occurring when the animation's progress reaches 50%
         animator.addAnimations({
             self.image.frame.origin.y += 250
         }, delayFactor: 0.5)
     }
+    
+    
+    
 }
 

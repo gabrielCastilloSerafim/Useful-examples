@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
+        //MARK: - Refresh Controll
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         
@@ -59,6 +60,7 @@ class ViewController: UIViewController {
                 self?.tableDatasource.append(data.results.sunrise)
                 self?.tableDatasource.append(String(data.results.day_length))
                 
+                //MARK: - End refreshing
                 DispatchQueue.main.async {
                     self?.tableView.refreshControl?.endRefreshing()
                     self?.tableView.reloadData()
